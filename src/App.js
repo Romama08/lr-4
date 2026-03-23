@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import EventDetails from './pages/EventDetails';
+import Profile from './pages/Profile';
+import Organizers from './pages/Organizers'; 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <header>
+        <div className="logo">OnlineTickets</div>
+        <nav>
+          <ul className="nav-menu">
+            <li><Link to="/">Головна</Link></li>
+            <li><Link to="/organizers">Організатори</Link></li> 
+            <li><Link to="/profile" className="profile-link">Мій профіль</Link></li>
+          </ul>
+        </nav>
       </header>
-    </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/event/:id" element={<EventDetails />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/organizers" element={<Organizers />} />
+      </Routes>
+
+      <footer>
+        <div className="footer-info">
+          <p>м. Львів, вул. Степана Бандери, 12</p>
+          <p>+38 (067) 123-45-67 | support@onlinetickets.ua</p>
+        </div>
+        <p className="copyright">&copy; 2026 OnlineTickets</p>
+      </footer>
+    </Router>
   );
 }
 
