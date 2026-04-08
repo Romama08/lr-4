@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "OnlineTickets",
+  "name": "Create OnlineTickets Sample",
   "icons": [
     {
       "src": "favicon.ico",

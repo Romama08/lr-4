@@ -97,6 +97,19 @@ header {
     border-color: #838a1e;
 }
 
+.clear-btn {
+    padding: 6px 15px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.clear-btn:hover {
+    background-color: #e2e2e2;
+}
+
 /* ===== 4. УНІВЕРСАЛЬНІ КНОПКИ ===== */
 .confirm-btn, .buy-now-btn, .reset-btn {
     background: #838a1e;
@@ -129,6 +142,18 @@ header {
 
 .cancel-btn:hover {
     color: #e63946;
+}
+
+.cancel-order-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
 }
 
 /* ===== 5. СІТКА ПОДІЙ ТА КАРТКИ ===== */
@@ -196,6 +221,18 @@ main {
     max-height: 450px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+
+.toggle-desc-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 6px 15px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .details-description {
@@ -292,12 +329,27 @@ main {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.profile-info {
+    text-align: left;
+}
+
 .avatar {
     border-radius: 50%;
     border: 3px solid #838a1e;
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 0;
 }
 
 .booking-card {
@@ -321,7 +373,64 @@ main {
     font-weight: bold;
 }
 
-/* ===== 8. ФУТЕР ===== */
+/* Кнопка скасування квитка у списку профілю */
+.profile-cancel-btn {
+    background-color: white;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-cancel-btn:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.auth-toggle {
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+}
+
+.auth-toggle:hover {
+    color: #fbbf24; 
+}
+
+/* ===== 8. ВІДГУКИ ТА ЗІРКИ ===== */
+.star-rating input[type="radio"] {
+    display: none !important;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.stars-display {
+    color: #ffc107;
+    letter-spacing: 2px;
+}
+
+/* ===== 9. ФУТЕР ===== */
 footer {
     background-color: #838a1e;
     color: white;
@@ -330,7 +439,36 @@ footer {
     margin-top: 40px;
 }
 
-/* ===== 9. АДАПТИВНІСТЬ ===== */
+.feedback-form textarea {
+    width: 100%;
+    min-height: 140px;          
+    padding: 15px 20px;        
+    border: 1px solid #ddd;     
+    border-radius: 12px;        
+    background-color: #f9f9f9;  
+    font-family: inherit;
+    font-size: 16px;            
+    color: #333;
+    resize: vertical;          
+    outline: none;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;  
+}
+
+
+.feedback-form textarea:focus {
+    border-color: #838a1e;       
+    background-color: #ffffff;  
+    box-shadow: 0 0 8px rgba(131, 138, 30, 0.2); 
+}
+
+.feedback-form textarea::placeholder {
+    color: #999;
+    font-style: normal;
+    opacity: 0.8;
+}
+
+/* ===== 10. АДАПТИВНІСТЬ ===== */
 @media (max-width: 768px) {
     .filters-container {
         flex-direction: column;
@@ -338,10 +476,9 @@ footer {
         width: 100%;
     }
 
-    .booking-card {
+    .booking-card, .profile-header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        text-align: center;
     }
 
     header {
